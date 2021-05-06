@@ -1,4 +1,4 @@
-package work;
+package week1.work;
 
 import java.io.*;
 import java.lang.reflect.Method;

@@ -1,4 +1,4 @@
-package jvm;
+package week1.jvm;
 
 import java.util.Base64;
 
@@ -10,7 +10,7 @@ public class MyClassLoader extends ClassLoader {
 
     public static void main(String[] args) {
         try {
-            new MyClassLoader().findClass("jvm.Hello").newInstance();
+            new MyClassLoader().findClass("week1.jvm.Hello").newInstance();
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (IllegalAccessException e) {

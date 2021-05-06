@@ -1,4 +1,4 @@
-package jvm;
+package week1.jvm;
 
 import sun.misc.Launcher;
 

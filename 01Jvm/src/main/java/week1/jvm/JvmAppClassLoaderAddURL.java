@@ -1,4 +1,4 @@
-package jvm;
+package week1.jvm;
 
 import java.lang.reflect.Method;
 import java.net.URL;
@@ -13,14 +13,14 @@ import java.net.URLClassLoader;
 public class JvmAppClassLoaderAddURL {
 
     public static void main(String[] args) {
-        String path = "file:/Users/ocean_wll/IdeaProjects/geekbang_java_up_study/01Jvm/src/main/java/jvm/Hello.class";
+        String path = "file:/Users/ocean_wll/IdeaProjects/geekbang_java_up_study/01Jvm/src/main/java/week1.jvm/Hello.class";
         URLClassLoader urlClassLoader = (URLClassLoader) JvmAppClassLoaderAddURL.class.getClassLoader();
         try {
             Method method = URLClassLoader.class.getDeclaredMethod("addURL", URL.class);
             method.setAccessible(true);
             URL url = new URL(path);
             method.invoke(urlClassLoader, url);
-            Class.forName("jvm.Hello");
+            Class.forName("week1.jvm.Hello");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -28,12 +28,12 @@ public class JvmAppClassLoaderAddURL {
 
 //    java9因为AppClassLoader、ExtClassLoader 没有继承URLClassLoader所以上面的方法会抛ClassCastException，可以使用下面的方法进行加载
 //    public static void main(String[] args) {
-//        String path = "file:/Users/ocean_wll/IdeaProjects/geekbang_java_up_study/01Jvm/src/main/java/jvm/Hello.class";
+//        String path = "file:/Users/ocean_wll/IdeaProjects/geekbang_java_up_study/01Jvm/src/main/java/week1.jvm/Hello.class";
 //        try {
 //            URL[] urls = new URL[1];
 //            URL url = new URL(path);
 //            urls[0] = url;
-//            Class.forName("jvm.Hello", true, new URLClassLoader(urls));
+//            Class.forName("week1.jvm.Hello", true, new URLClassLoader(urls));
 //            System.out.println(11);
 //        } catch (Exception e) {
 //            e.printStackTrace();
