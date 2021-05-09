@@ -2,17 +2,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>geekbang_java_up_study</artifactId>
+        <groupId>ocean</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>ocean</groupId>
-    <artifactId>geekbang_java_up_study</artifactId>
-    <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>work</artifactId>
 
-    <modules>
-        <module>01Jvm</module>
-        <module>work</module>
-        <module>02Nio</module>
-    </modules>
 
 </project>
