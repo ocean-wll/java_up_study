@@ -13,6 +13,7 @@
         <module>01Jvm</module>
         <module>work</module>
         <module>02Nio</module>
+        <module>03Concurrent</module>
     </modules>
 
 </project>
