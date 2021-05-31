@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.ocean.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="io.ocean.model.UserDO">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="CHAR" property="name" />
+    <result column="t1" jdbcType="CHAR" property="t1" />
+    <result column="t2" jdbcType="CHAR" property="t2" />
+    <result column="t3" jdbcType="CHAR" property="t3" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, `name`, t1, t2, t3
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from user
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="io.ocean.model.UserDO" useGeneratedKeys="true">
+    insert into user (`name`, t1, t2, t3
+      )
+    values (#{name,jdbcType=CHAR}, #{t1,jdbcType=CHAR}, #{t2,jdbcType=CHAR}, #{t3,jdbcType=CHAR}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="io.ocean.model.UserDO" useGeneratedKeys="true">
+    insert into user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        `name`,
+      </if>
+      <if test="t1 != null">
+        t1,
+      </if>
+      <if test="t2 != null">
+        t2,
+      </if>
+      <if test="t3 != null">
+        t3,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="name != null">
+        #{name,jdbcType=CHAR},
+      </if>
+      <if test="t1 != null">
+        #{t1,jdbcType=CHAR},
+      </if>
+      <if test="t2 != null">
+        #{t2,jdbcType=CHAR},
+      </if>
+      <if test="t3 != null">
+        #{t3,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="io.ocean.model.UserDO">
+    update user
+    <set>
+      <if test="name != null">
+        `name` = #{name,jdbcType=CHAR},
+      </if>
+      <if test="t1 != null">
+        t1 = #{t1,jdbcType=CHAR},
+      </if>
+      <if test="t2 != null">
+        t2 = #{t2,jdbcType=CHAR},
+      </if>
+      <if test="t3 != null">
+        t3 = #{t3,jdbcType=CHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="io.ocean.model.UserDO">
+    update user
+    set `name` = #{name,jdbcType=CHAR},
+      t1 = #{t1,jdbcType=CHAR},
+      t2 = #{t2,jdbcType=CHAR},
+      t3 = #{t3,jdbcType=CHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

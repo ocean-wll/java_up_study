@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.ocean.dao.UserDao">
+
+    <resultMap type="io.ocean.entity.User" id="UserMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="t1" column="t1" jdbcType="VARCHAR"/>
+        <result property="t2" column="t2" jdbcType="VARCHAR"/>
+        <result property="t3" column="t3" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="UserMap">
+        select id,
+               name,
+               t1,
+               t2,
+               t3
+        from wll_study.user
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="UserMap">
+        select id,
+               name,
+               t1,
+               t2,
+               t3
+        from wll_study.user limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="UserMap">
+        select
+        id, name, t1, t2, t3
+        from wll_study.user
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="name != null and name != ''">
+                and name = #{name}
+            </if>
+            <if test="t1 != null and t1 != ''">
+                and t1 = #{t1}
+            </if>
+            <if test="t2 != null and t2 != ''">
+                and t2 = #{t2}
+            </if>
+            <if test="t3 != null and t3 != ''">
+                and t3 = #{t3}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into wll_study.user(name, t1, t2, t3)
+        values (#{name}, #{t1}, #{t2}, #{t3})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into wll_study.user(name, t1, t2, t3)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.name}, #{entity.t1}, #{entity.t2}, #{entity.t3})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into wll_study.user(name, t1, t2, t3)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.name}, #{entity.t1}, #{entity.t2}, #{entity.t3})
+        </foreach>
+        on duplicate key update
+        name = values(name) , t1 = values(t1) , t2 = values(t2) , t3 = values(t3)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update wll_study.user
+        <set>
+            <if test="name != null and name != ''">
+                name = #{name},
+            </if>
+            <if test="t1 != null and t1 != ''">
+                t1 = #{t1},
+            </if>
+            <if test="t2 != null and t2 != ''">
+                t2 = #{t2},
+            </if>
+            <if test="t3 != null and t3 != ''">
+                t3 = #{t3},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete
+        from wll_study.user
+        where id = #{id}
+    </delete>
+
+</mapper>
+
