@@ -1,7 +1,5 @@
 package week7.problem6;
 
-import lombok.Data;
-
 /**
  * 雪花算法demo，实现自增长id
  * <p>
@@ -14,7 +12,6 @@ import lombok.Data;
  * @author : ocean_wll
  * @since 2021/6/19
  */
-@Data
 public class SnowflakeIdGenerator {
 
     /**
