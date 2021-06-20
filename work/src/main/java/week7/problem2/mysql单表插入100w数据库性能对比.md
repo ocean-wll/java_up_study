@@ -34,7 +34,7 @@ BEGIN
 END
 ```
 
-![image-20210619134618258](/Users/ocean_wll/IdeaProjects/geekbang_java_up_study/work/src/main/java/week7/problem2/image-20210619134618258.png)
+![image-20210619134618258](image-20210619134618258.png)
 
 插入一条数据自动提交一次事务，可以看到插入100w数据执行了 4分33秒。
 
@@ -56,7 +56,7 @@ BEGIN
 END
 ```
 
-![image-20210619135205744](/Users/ocean_wll/IdeaProjects/geekbang_java_up_study/work/src/main/java/week7/problem2/image-20210619135205744.png)
+![image-20210619135205744](image-20210619135205744.png)
 
 当手动开启事务并提交记录，可以明显发现执行速度快了很多，只有50.816s。
 
@@ -120,7 +120,7 @@ END
     }
 ```
 
-![image-20210619140240569](/Users/ocean_wll/IdeaProjects/geekbang_java_up_study/work/src/main/java/week7/problem2/image-20210619140240569.png)
+![image-20210619140240569](image-20210619140240569.png)
 
 可以看到通过jdbc手动提交事务插入100w数据的执行时间是162s，比直接执行sql慢很多。
 
@@ -130,15 +130,15 @@ END
 
 数据示例如下
 
-![image-20210619140731869](/Users/ocean_wll/IdeaProjects/geekbang_java_up_study/work/src/main/java/week7/problem2/image-20210619140731869.png)
+![image-20210619140731869](image-20210619140731869.png)
 
 开始数据导入，配置参数如下：
 
-![image-20210619141618618](/Users/ocean_wll/IdeaProjects/geekbang_java_up_study/work/src/main/java/week7/problem2/image-20210619141618618.png)
+![image-20210619141618618](image-20210619141618618.png)
 
 
 
-![image-20210619142111342](/Users/ocean_wll/IdeaProjects/geekbang_java_up_study/work/src/main/java/week7/problem2/image-20210619142111342.png)
+![image-20210619142111342](image-20210619142111342.png)
 
 可以看到执行时间为3m49s
 
