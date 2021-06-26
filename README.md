@@ -1,6 +1,8 @@
 # java_up_study
 ocean的java提高学习
 
+更多内容可以查看 ocean的技术日志：https://www.yuque.com/yigejianfeideren/xb4ed8
+
 一个15周的提高学习阶段
 
 # 安排
