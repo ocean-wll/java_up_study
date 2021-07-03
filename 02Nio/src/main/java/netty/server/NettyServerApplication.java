@@ -1,4 +1,4 @@
-package netty;
+package netty.server;
 
 /**
  * @author ocean_wll
