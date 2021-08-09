@@ -49,4 +49,4 @@
 </plugin>
 ```
 
-3、idea启动项目时指定 -javaagent:/Users/ocean_wll/IdeaProjects/geekbang_java_up_study/work/target/work-1.0-SNAPSHOT.jar 
+3、idea启动项目时指定 -javaagent:/Users/ocean_wll/IdeaProjects/geekbang_java_up_study/work/target/work-1.0-SNAPSHOT.jar
