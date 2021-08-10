@@ -26,3 +26,6 @@ ocean的java提高学习
 # 其他
 ### JVM内存排查
 ### JAVA企业级项目实战
+
+
+参考资料:https://shimo.im/docs/YGjGgTWwgD6V3wkp/read
