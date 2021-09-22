@@ -15,6 +15,7 @@
         <module>02Nio</module>
         <module>03Concurrent</module>
         <module>06UtilJar</module>
+        <module>utils</module>
     </modules>
 
 </project>
